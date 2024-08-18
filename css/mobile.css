@@ -1,0 +1,148 @@
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Adjusted for mobile readability */
+        padding: 0; /* Remove extra padding for a more app-like feel */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    .header-container {
+        padding: 10px; /* Adjusted padding */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items */
+        background-color: #121212; /* Consistent dark background */
+        position: relative; /* Positioning context for absolute elements */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    }
+
+    .header-logo {
+        max-height: 40px; /* Adjusted logo size */
+        margin-bottom: 10px; /* Space between logo and menu */
+        transition: transform 0.3s ease-in-out; /* Smooth logo transition */
+    }
+
+    .header-logo:hover {
+        transform: scale(1.05); /* Slight zoom effect on hover */
+    }
+
+    .nav-links {
+        display: none; /* Hide links by default */
+        flex-direction: column; /* Stack links vertically */
+        width: 100%; /* Full width for mobile menu */
+        background-color: #282828; /* Background for mobile menu */
+        position: absolute;
+        top: 60px; /* Adjusted top position */
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+        animation: fadeInUp 0.5s ease-in-out; /* Faster animation */
+        z-index: 1000; /* Ensure menu is above other content */
+        border-radius: 8px; /* Rounded corners */
+        overflow: hidden; /* Hide overflow for rounded corners */
+    }
+
+    .nav-links.show {
+        display: flex; /* Show links when menu is toggled */
+    }
+
+    .nav-link {
+        padding: 15px 20px; /* Spacing for each link */
+        color: #fff; /* Link color */
+        text-align: center; /* Center align text */
+        text-decoration: none; /* Remove underline */
+        font-size: 1.2em; /* Slightly larger font size */
+        transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    }
+
+    .nav-link:hover {
+        background-color: #ffcc00; /* Highlight color on hover */
+        color: #121212; /* Text color on hover */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle */
+        font-size: 24px; /* Larger icon for easier tap */
+        cursor: pointer;
+        color: #ffcc00; /* Contrast color for visibility */
+        z-index: 1000; /* Ensure toggle is above other content */
+        position: relative; /* Establish positioning context */
+        transition: color 0.3s; /* Smooth color transition */
+    }
+
+    .menu-toggle:hover {
+        color: #ff9900; /* Color change on hover */
+    }
+
+    .container {
+        padding: 10px; /* Reduced padding */
+    }
+
+    .main {
+        padding: 20px 10px; /* Reduced padding */
+    }
+
+    .safety-message {
+        font-size: 0.9em; /* Adjusted font size */
+        padding: 8px; /* Reduced padding */
+        margin: 0 0 2rem; /* Reduced bottom margin */
+    }
+
+    .games-container {
+        gap: 10px; /* Reduced gap */
+    }
+
+    .game {
+        max-width: 100%; /* Full width for mobile */
+        padding: 10px; /* Reduced padding */
+        margin-bottom: 2rem; /* Reduced bottom margin */
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Lighter shadow */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+        border-radius: 8px; /* Rounded corners */
+    }
+
+    .game img {
+        max-width: 100%;
+        border-radius: 4px; /* Adjusted border radius */
+    }
+
+    .game h3 {
+        font-size: 1em; /* Adjusted font size */
+        margin: 5px 0; /* Adjusted margin */
+    }
+
+    .game .buy-now, .game .youtube {
+        font-size: 0.8em; /* Adjusted font size */
+        padding: 6px 10px; /* Reduced padding */
+    }
+
+    footer {
+        padding: 10px; /* Reduced padding */
+        font-size: 10px; /* Adjusted font size */
+    }
+}
+
+/* Hide the menu toggle on desktop */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex; /* Show links on desktop */
+        position: static; /* Normal position */
+        flex-direction: row; /* Horizontal menu */
+        box-shadow: none; /* No shadow on desktop */
+        animation: none; /* No animation on desktop */
+    }
+}
+
+/* Mobile Navbar Toggle Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px); /* Smaller translate */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
